@@ -2,7 +2,6 @@
 
 [![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS-blue)]()
 [![Tech](https://img.shields.io/badge/Stack-MERN%20%2B%20AI-purple)]()
-[![License](https://img.shields.io/badge/License-MIT-green)]()
 
 **Examo_test** is a full‑stack mobile educational app that makes learning addictive.  
 It combines **AI‑generated quizzes**, **real‑time multiplayer battles**, **live AI tutoring**, and a **rich gamification engine** to turn boring subjects into engaging challenges.
@@ -237,6 +236,6 @@ Feel free to fork this repository and submit a pull request.
 
 Built with ❤️ and a lot of ☕ by Rishabh Tiwari
 
-text
+
 
 ---
