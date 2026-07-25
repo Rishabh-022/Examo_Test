@@ -211,24 +211,25 @@ Scan the QR code with Expo Go on your phone.
 8. Winner is declared based on total score.
 
 🤖 AI Pipeline Overview
-text
+```text
 NCERT/ICSE PDFs → extract text (PyPDF2) → Gemini/Groq → JSON questions → MongoDB
-Chapter population: populate_chapters.py scans the folder structure and creates chapter documents with theoryNotes (first 500 chars).
+```
+- Chapter population: populate_chapters.py scans the folder structure and creates chapter documents with theoryNotes (first 500 chars).
 
-Batch generation: batch_generate.py sends each chapter’s text to the LLM with a structured prompt → receives 30 MCQs → inserts into questions collection.
+- Batch generation: batch_generate.py sends each chapter’s text to the LLM with a structured prompt → receives 30 MCQs → inserts into questions collection.
 
-Live explanation: After each answer, the app calls POST /api/questions/explain → backend forwards to Groq → returns a custom, encouraging explanation.
+- Live explanation: After each answer, the app calls POST /api/questions/explain → backend forwards to Groq → returns a custom, encouraging explanation.
 
-AI Tutor: A dedicated chat screen sends user messages to POST /api/tutor → Groq responds with subject‑aware answers.
+- AI Tutor: A dedicated chat screen sends user messages to POST /api/tutor → Groq responds with subject‑aware answers.
 
 🚀 Future Roadmap
-□ [ ] Adaptive difficulty (question selection based on performance)
-□ [ ]  In‑app voice reading (Text‑to‑Speech)
-□ [ ] Push notifications for daily reward reminders
-□ [ ] Custom avatar / profile picture
-□ [ ] Detailed analytics dashboard (charts, time spent)
-□ [ ] Offline mode (cache questions locally)
-□ [ ] Social sharing of achievements
+- [ ] Adaptive difficulty (question selection based on performance)
+- [ ]  In‑app voice reading (Text‑to‑Speech)
+- [ ] Push notifications for daily reward reminders
+- [ ] Custom avatar / profile picture
+- [ ] Detailed analytics dashboard (charts, time spent)
+- [ ] Offline mode (cache questions locally)
+- [ ] Social sharing of achievements
 🤝 Contributing
 Contributions, issues, and feature requests are welcome!
 Feel free to fork this repository and submit a pull request.
