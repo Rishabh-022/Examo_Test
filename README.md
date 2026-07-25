@@ -1,4 +1,4 @@
-# 🎓 EduQuest — AI-Powered Gamified Learning Platform
+# 🎓 Examo_test — AI-Powered Gamified Learning Platform
 
 [![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS-blue)]()
 [![Tech](https://img.shields.io/badge/Stack-MERN%20%2B%20AI-purple)]()
