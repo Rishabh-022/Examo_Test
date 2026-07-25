@@ -159,11 +159,13 @@ pip install -r requirements.txt
 python bulk_process.py     # extract & organize PDFs
 python populate_chapters.py  # create chapters in MongoDB
 python batch_generate.py     # generate MCQs with Gemini/Groq
+```
 Frontend (Expo)
-bash
+```bash
 cd frontend
 npm install
 npx expo start --clear
+```
 Scan the QR code with Expo Go on your phone.
 
 ## 📡 API Endpoints
@@ -184,7 +186,6 @@ Scan the QR code with Expo Go on your phone.
 | GET | `/api/achievements` | Yes | Get all badges with earned status |
 * can be protected if needed
 
-```
 ## 🎮 Gamification Mechanics
 
 | Mechanic | Description |
