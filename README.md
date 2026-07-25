@@ -48,7 +48,7 @@ Students can learn, compete, and track their progress — all from one beautiful
                       │   (Python)   │              
                       │ Gemini/Groq  │              
                       └──────────────┘
-text
+```
 
 **Data Flow:**
 1. **PDF Ingestion** – Python scripts download/process PDFs → Extract text → Send to Gemini/Groq → Insert questions into MongoDB.
@@ -103,7 +103,7 @@ exam/
         ├── pdf_extractor.py  # PyPDF2 text extractor 
         ├── db_inserter.py    # MongoDB insert helper 
         └── requirements.txt
-text
+```
 
 ---
 
@@ -121,7 +121,9 @@ text
 ```bash
 git clone https://github.com/Rishabh-02/examo_test.git
 cd exam_test
-2. Environment Variables
+```
+### 2. Environment Variables
+```bash
 Create two .env files:
 
 backend/.env
@@ -137,23 +139,29 @@ backend/ai-service/.env
 env
 MONGO_URI=same_as_above
 GEMINI_API_KEY=your_gemini_key
-3. Install & Run
+```
+### 3. Install & Run
+```bash
 Backend (Express)
 bash
 cd backend
 npm install
 npm run dev      # starts on port 5000 with nodemon
+```
 AI Pipeline (Python)
-bash
+```bash
 cd backend/ai-service
 python -m venv venv
 source venv/bin/activate   # or .\venv\Scripts\activate on Windows
+
+``` 
+
 pip install -r requirements.txt
 python bulk_process.py     # extract & organize PDFs
 python populate_chapters.py  # create chapters in MongoDB
 python batch_generate.py     # generate MCQs with Gemini/Groq
 Frontend (Expo)
-bash
+```bash
 cd frontend
 npm install
 npx expo start --clear
@@ -175,6 +183,7 @@ GET	/api/leaderboard	Yes	Top 50 users by XP
 GET	/api/achievements	Yes	Get all badges with earned status
 * can be protected if needed
 
+```
 🎮 Gamification Mechanics
 Mechanic	Description
 XP & Leveling	Every correct answer = +10 XP. Level = floor(totalXP / 100) + 1. XP bar shows progress within current level.
