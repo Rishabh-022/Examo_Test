@@ -48,7 +48,7 @@ Students can learn, compete, and track their progress — all from one beautiful
                       │   (Python)   │              
                       │ Gemini/Groq  │              
                       └──────────────┘
-```text
+text
 
 **Data Flow:**
 1. **PDF Ingestion** – Python scripts download/process PDFs → Extract text → Send to Gemini/Groq → Insert questions into MongoDB.
@@ -103,7 +103,7 @@ exam/
         ├── pdf_extractor.py  # PyPDF2 text extractor 
         ├── db_inserter.py    # MongoDB insert helper 
         └── requirements.txt
-```text
+text
 
 ---
 
