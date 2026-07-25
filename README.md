@@ -154,60 +154,60 @@ cd backend/ai-service
 python -m venv venv
 source venv/bin/activate   # or .\venv\Scripts\activate on Windows
 
-``` 
 
 pip install -r requirements.txt
 python bulk_process.py     # extract & organize PDFs
 python populate_chapters.py  # create chapters in MongoDB
 python batch_generate.py     # generate MCQs with Gemini/Groq
 Frontend (Expo)
-```bash
+bash
 cd frontend
 npm install
 npx expo start --clear
 Scan the QR code with Expo Go on your phone.
 
-📡 API Endpoints
-Method	Endpoint	Auth	Description
-POST	/api/auth/register	No	Register new user
-POST	/api/auth/login	No	Login and receive JWT
-GET	/api/auth/user	Yes	Get current user profile
-POST	/api/auth/claim-daily	Yes	Claim daily login reward
-POST	/api/auth/update-progress	Yes	Update XP/level after quiz
-GET	/api/chapters?board=…&classLevel=…&subject=…	Yes	Get chapters for selected filters
-GET	/api/questions?chapterId=…	Yes	Get questions for a chapter
-GET	/api/questions/random?board=…&…&limit=…	Yes	Get random questions for a subject
-POST	/api/questions/explain	No*	Generate live AI explanation for a question
-POST	/api/tutor	Yes	AI chat tutor (returns reply)
-GET	/api/leaderboard	Yes	Top 50 users by XP
-GET	/api/achievements	Yes	Get all badges with earned status
+## 📡 API Endpoints
+
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| POST | `/api/auth/register` | No | Register new user |
+| POST | `/api/auth/login` | No | Login and receive JWT |
+| GET | `/api/auth/user` | Yes | Get current user profile |
+| POST | `/api/auth/claim-daily` | Yes | Claim daily login reward |
+| POST | `/api/auth/update-progress` | Yes | Update XP/level after quiz |
+| GET | `/api/chapters?board=…&classLevel=…&subject=…` | Yes | Get chapters for selected filters |
+| GET | `/api/questions?chapterId=…` | Yes | Get questions for a chapter |
+| GET | `/api/questions/random?board=…&…&limit=…` | Yes | Get random questions for a subject |
+| POST | `/api/questions/explain` | No* | Generate live AI explanation for a question |
+| POST | `/api/tutor` | Yes | AI chat tutor (returns reply) |
+| GET | `/api/leaderboard` | Yes | Top 50 users by XP |
+| GET | `/api/achievements` | Yes | Get all badges with earned status |
 * can be protected if needed
 
 ```
-🎮 Gamification Mechanics
-Mechanic	Description
-XP & Leveling	Every correct answer = +10 XP. Level = floor(totalXP / 100) + 1. XP bar shows progress within current level.
-Coins	Earned through daily rewards and quiz bonuses.
-Streaks	Consecutive days logging in or claiming reward.
-Daily Reward	Base 10 coins + (streak × 5). Can only claim once per day.
-Achievements	Dynamic badges: Beginner (10 XP), Streak 3, Streak 7, Coin Collector, Scholar (500 XP), Level 5.
-Leaderboard	Sorted by total XP (descending).
-⚔️ Real‑Time Battle Flow
-Player selects subject → taps Find Match.
+## 🎮 Gamification Mechanics
 
-Socket.io finds an opponent → generates shared 10 random questions.
+| Mechanic | Description |
+|----------|-------------|
+| **XP & Leveling** | Every correct answer = +10 XP. Level = floor(totalXP / 100) + 1. XP bar shows progress within current level. |
+| **Coins** | Earned through daily rewards and quiz bonuses. |
+| **Streaks** | Consecutive days logging in or claiming reward. |
+| **Daily Reward** | Base 10 coins + (streak × 5). Can only claim once per day. |
+| **Achievements** | Dynamic badges: Beginner (10 XP), Streak 3, Streak 7, Coin Collector, Scholar (500 XP), Level 5. |
+| **Leaderboard** | Sorted by total XP (descending). |
 
-Both players see an instruction screen → press Ready.
+---
 
-Battle starts simultaneously when both are ready.
+## ⚔️ Real‑Time Battle Flow
 
-During battle, no correct/wrong colours – only a blue selection border.
-
-Opponent’s progress shown as green dots.
-
-After the last question, a review screen shows every question with ✔/✘ and correct answer.
-
-Winner is declared based on total score.
+1. Player selects subject → taps **Find Match**.
+2. Socket.io finds an opponent → generates shared 10 random questions.
+3. Both players see an instruction screen → press **Ready**.
+4. Battle starts simultaneously when both are ready.
+5. During battle, no correct/wrong colours – only a blue selection border.
+6. Opponent’s progress shown as green dots.
+7. After the last question, a review screen shows every question with ✔/✘ and correct answer.
+8. Winner is declared based on total score.
 
 🤖 AI Pipeline Overview
 text
@@ -221,13 +221,13 @@ Live explanation: After each answer, the app calls POST /api/questions/explain �
 AI Tutor: A dedicated chat screen sends user messages to POST /api/tutor → Groq responds with subject‑aware answers.
 
 🚀 Future Roadmap
-□ Adaptive difficulty (question selection based on performance)
-□ In‑app voice reading (Text‑to‑Speech)
-□ Push notifications for daily reward reminders
-□ Custom avatar / profile picture
-□ Detailed analytics dashboard (charts, time spent)
-□ Offline mode (cache questions locally)
-□ Social sharing of achievements
+□ [ ] Adaptive difficulty (question selection based on performance)
+□ [ ]  In‑app voice reading (Text‑to‑Speech)
+□ [ ] Push notifications for daily reward reminders
+□ [ ] Custom avatar / profile picture
+□ [ ] Detailed analytics dashboard (charts, time spent)
+□ [ ] Offline mode (cache questions locally)
+□ [ ] Social sharing of achievements
 🤝 Contributing
 Contributions, issues, and feature requests are welcome!
 Feel free to fork this repository and submit a pull request.
