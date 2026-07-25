@@ -28,28 +28,27 @@ Students can learn, compete, and track their progress — all from one beautiful
 - **Dark / Light Gradient UI** – Beautiful gradient backgrounds with floating animations.
 
 ---
-
 ## 🏗️ System Architecture
-┌──────────────┐ ┌──────────────┐ ┌──────────────┐
-│ Expo App │────▶│ Express API │────▶│ MongoDB │
-│ (React Native)│ │ (Node.js) │ │ (Atlas) │
-└──────────────┘ └──────────────┘ └──────────────┘
-│ │
-│ │ (Socket.io)
-│ ▼
-│ ┌──────────────┐
-│ │ Real-Time │
-│ │ Battles │
-│ └──────────────┘
-│
-▼
-┌──────────────┐
-│ AI Services │
-│ (Python) │
-│ Gemini/Groq │
-└──────────────┘
 
-text
+```text
+┌──────────────┐      ┌──────────────┐      ┌──────────────┐
+│   Expo App   │────▶ │  Express API │────▶ │   MongoDB    │
+│(React Native)│      │  (Node.js)   │      │   (Atlas)    │
+└──────────────┘      └──────────────┘      └──────────────┘
+                             │                      
+                             │ (Socket.io)          
+                             ▼                      
+                      ┌──────────────┐              
+                      │  Real-Time   │              
+                      │   Battles    │              
+                      └──────────────┘              
+                             ▼                      
+                      ┌──────────────┐              
+                      │ AI Services  │              
+                      │   (Python)   │              
+                      │ Gemini/Groq  │              
+                      └──────────────┘
+```text
 
 **Data Flow:**
 1. **PDF Ingestion** – Python scripts download/process PDFs → Extract text → Send to Gemini/Groq → Insert questions into MongoDB.
@@ -72,39 +71,39 @@ text
 
 ---
 
+```markdown
 ## 📁 Project Structure
-exam/
-├── frontend/ # React Native (Expo) App
-│ ├── app/ # Expo Router screens
-│ ├── src/
-│ │ ├── screens/ # All screens (Login, Dashboard, Quiz, etc.)
-│ │ ├── context/ # AuthContext
-│ │ ├── services/ # API client (Axios)
-│ │ ├── constants/ # Colors & theme
-│ │ └── navigation/ # AppNavigator
-│ └── package.json
-│
-├── backend/ # Express REST API + Socket.io
-│ ├── config/
-│ │ └── db.js
-│ ├── models/ # User, Chapter, Question
-│ ├── routes/ # auth, chapters, questions, leaderboard, tutor, achievements
-│ ├── middleware/ # JWT auth middleware
-│ ├── server.js
-│ └── package.json
-│
-└── backend/ai-service/ # Python data pipeline
-├── pdfs/ # Organized textbook PDFs (CBSE/ICSE)
-├── Raw_Zips/ # Downloaded ZIP archives
-├── bulk_process.py # Extract & rename PDFs
-├── populate_chapters.py # Auto‑create chapter docs in MongoDB
-├── batch_generate.py # Send PDFs to Gemini → insert questions
-├── gemini_service.py # Gemini prompt logic
-├── pdf_extractor.py # PyPDF2 text extractor
-├── db_inserter.py # MongoDB insert helper
-└── requirements.txt
 
-text
+```text
+exam/ 
+├── frontend/                 # React Native (Expo) App 
+│   ├── app/                  # Expo Router screens 
+│   ├── src/ 
+│   │   ├── screens/          # All screens (Login, Dashboard, Quiz, etc.) 
+│   │   ├── context/          # AuthContext 
+│   │   ├── services/         # API client (Axios) 
+│   │   ├── constants/        # Colors & theme 
+│   │   └── navigation/       # AppNavigator 
+│   └── package.json 
+└── backend/                  # Express REST API + Socket.io 
+    ├── config/ 
+    │   └── db.js 
+    ├── models/               # User, Chapter, Question 
+    ├── routes/               # auth, chapters, questions, leaderboard, tutor, achievements 
+    ├── middleware/           # JWT auth middleware 
+    ├── server.js 
+    ├── package.json 
+    └── ai-service/           # Python data pipeline 
+        ├── pdfs/             # Organized textbook PDFs (CBSE/ICSE) 
+        ├── Raw_Zips/         # Downloaded ZIP archives 
+        ├── bulk_process.py   # Extract & rename PDFs 
+        ├── populate_chapters.py # Auto-create chapter docs in MongoDB 
+        ├── batch_generate.py # Send PDFs to Gemini → insert questions 
+        ├── gemini_service.py # Gemini prompt logic 
+        ├── pdf_extractor.py  # PyPDF2 text extractor 
+        ├── db_inserter.py    # MongoDB insert helper 
+        └── requirements.txt
+```text
 
 ---
 
