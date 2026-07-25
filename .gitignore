@@ -1,0 +1,23 @@
+# Environment variables (CRUCIAL)
+.env
+.env.local
+
+# Virtual environments & Python cache
+venv/
+__pycache__/
+*.pyc
+
+# Node dependencies
+node_modules/
+
+# Scraped temporary data & output zips
+Temp_Unzipped/
+icse_downloaded_pdfs/
+*.pdf
+
+# Operating system clutter
+.DS_Store
+Thumbs.db
+
+backend/ai-service/Raw_Zips/
+*.zip
