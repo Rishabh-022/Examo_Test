@@ -132,8 +132,8 @@ env
 PORT=5000
 MONGO_URI=mongodb+srv://<user>:<password>@cluster0.xxxxx.mongodb.net/exam
 JWT_SECRET=your_jwt_secret
-GEMINI_API_KEY=AIzaSy...           # if using Gemini
-GROQ_API_KEY=gsk_...               # if using Groq for live tutor
+GEMINI_API_KEY=AIzaSy...       
+GROQ_API_KEY=gsk_...               
 backend/ai-service/.env
 
 env
@@ -146,7 +146,7 @@ Backend (Express)
 bash
 cd backend
 npm install
-npm run dev      # starts on port 5000 with nodemon
+npm run dev     
 ```
 AI Pipeline (Python)
 ```bash
@@ -156,9 +156,9 @@ source venv/bin/activate   # or .\venv\Scripts\activate on Windows
 
 
 pip install -r requirements.txt
-python bulk_process.py     # extract & organize PDFs
-python populate_chapters.py  # create chapters in MongoDB
-python batch_generate.py     # generate MCQs with Gemini/Groq
+python bulk_process.py     
+python populate_chapters.py  
+python batch_generate.py    
 ```
 Frontend (Expo)
 ```bash
